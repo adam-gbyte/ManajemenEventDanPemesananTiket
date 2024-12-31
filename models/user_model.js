@@ -5,6 +5,12 @@ const getAllUser = async () => {
     return rows
 }
 
+const getUserById = async (id) => {
+    const [row] = await db.query("select * from users where id=?", [id])
+    return row
+}
+
 module.exports = {
-    getAllUser
+    getAllUser,
+    getUserById
 }
